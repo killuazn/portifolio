@@ -1,0 +1,104 @@
+<div class="mt-20 container mx-auto p-6">
+  <h1 class="text-4xl font-extrabold text-center mb-12 text-white">
+    Meus Projetos
+  </h1>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- Projeto 1 -->
+    <div
+      class="bg-gradient-to-r from-indigo-500 to-purple-600 shadow-2xl rounded-lg p-6 transform transition-all hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-indigo-400 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-700 relative"
+      (click)="
+        openModal(
+          'modal1',
+          'https://cdn.leonardo.ai/users/fc623082-5efe-4439-aa6b-af89eae46a85/generations/9f880eab-263e-497e-be7e-43cb8496044d/Leonardo_Phoenix_10_Create_a_mesmerizing_anime_woman_embodying_0.jpg'
+        )
+      "
+    >
+      <img
+        src="https://cdn.leonardo.ai/users/fc623082-5efe-4439-aa6b-af89eae46a85/generations/9f880eab-263e-497e-be7e-43cb8496044d/Leonardo_Phoenix_10_Create_a_mesmerizing_anime_woman_embodying_0.jpg"
+        alt="Projeto 1"
+        class="w-full h-48 object-cover rounded-md mb-6 transition-all duration-500 ease-in-out hover:blur-sm cursor-pointer"
+      />
+      <h2 class="text-2xl font-bold text-white mb-2 drop-shadow-lg">Vortex</h2>
+<p class="text-gray-300 mb-4 text-lg">
+  Vortex é um bot avançado para servidores Discord, projetado para otimizar a interação e engajamento da comunidade.
+  Com funcionalidades como gerenciamento de eventos, automações e comandos personalizados, o Vortex facilita a administração
+  e promove uma experiência mais dinâmica e divertida para os membros.
+</p>
+
+    </div>
+
+    <!-- Projeto 2 -->
+    <div
+      class="bg-gradient-to-r from-indigo-500 to-purple-600 shadow-2xl rounded-lg p-6 transform transition-all hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-orange-400 hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-700 relative"
+      (click)="
+        openModal(
+          'modal2',
+          'https://cdn.leonardo.ai/users/fc623082-5efe-4439-aa6b-af89eae46a85/generations/bab4ffe7-93c5-4727-9bc3-d89bcfc454f2/Leonardo_Phoenix_10_A_vibrant_celestial_background_filled_with_2.jpg'
+        )
+      "
+    >
+      <img
+        src="https://cdn.leonardo.ai/users/fc623082-5efe-4439-aa6b-af89eae46a85/generations/bab4ffe7-93c5-4727-9bc3-d89bcfc454f2/Leonardo_Phoenix_10_A_vibrant_celestial_background_filled_with_2.jpg"
+        alt="Projeto 2"
+        class="w-full h-48 object-cover rounded-md mb-6 transition-all duration-500 ease-in-out hover:blur-sm cursor-pointer"
+      />
+      <h2 class="text-2xl font-bold text-white mb-2 drop-shadow-lg">
+        GalaxyDevegas
+      </h2>
+      <p class="text-gray-300 mb-4 text-lg">
+        Particpante de uma comunidade de desenvolvedores apaixonados, unidos pela inovação e pela troca de conhecimentos.
+        Junte-se a nós e explore novas possibilidades no mundo da programação e da tecnologia.
+      </p>
+
+    </div>
+
+    <!-- Projeto 3 -->
+    <div
+      class="bg-gradient-to-r from-indigo-500 to-purple-600 shadow-2xl rounded-lg p-6 transform transition-all hover:scale-105 hover:shadow-2xl hover:border-4 hover:border-green-400 hover:bg-gradient-to-r hover:from-green-500 hover:to-teal-700 relative"
+      (click)="
+        openModal(
+          'modal3',
+          'https://cdn.leonardo.ai/users/fc623082-5efe-4439-aa6b-af89eae46a85/generations/21811546-96e8-467d-93a4-bbed64e243cc/Graphic_Design_create_a_logo_called_Seraph_UI_use_a_female_AI_0.jpg?w=512'
+        )
+      "
+    >
+      <img
+        src="https://cdn.leonardo.ai/users/fc623082-5efe-4439-aa6b-af89eae46a85/generations/21811546-96e8-467d-93a4-bbed64e243cc/Graphic_Design_create_a_logo_called_Seraph_UI_use_a_female_AI_0.jpg?w=512"
+        alt="Projeto 3"
+        class="w-full h-48 object-cover rounded-md mb-6 transition-all duration-500 ease-in-out hover:blur-sm cursor-pointer"
+      />
+      <h2 class="text-2xl font-bold text-white mb-2 drop-shadow-lg">
+        Nuxy Bot
+      </h2>
+      <p class="text-gray-300 mb-4 text-lg">
+        Um poderoso bot de economia para servidores Discord, projetado para gerenciar moedas virtuais,
+        transações entre usuários e desafios divertidos. Ideal para criar uma experiência imersiva e engajante para sua comunidade.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Modal de Imagem -->
+  <div
+    [ngClass]="{
+      'fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center':
+        isModalOpen,
+      hidden: !isModalOpen
+    }"
+  >
+    <div class="relative p-4 bg-white rounded-lg">
+      <button
+        class="absolute top-2 right-2 text-white text-2xl"
+        (click)="closeModal()"
+      >
+        X
+      </button>
+      <img
+        [src]="currentImageUrl"
+        alt="Imagem do projeto"
+        class="w-full h-auto max-w-2xl max-h-96 object-contain"
+      />
+    </div>
+  </div>
+</div>
